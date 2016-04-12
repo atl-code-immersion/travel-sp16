@@ -15,12 +15,12 @@
 
 <!-- Passing Image Names through Array  -->
 <% @images.each do |image| %>
-	<p><%= image_tag image, alt: "Happy llama" %></p>
+	<p><%= image_tag image, alt: "Happy llama", class: "img-responsive" %></p>
 <% end %>
 
 <!-- Passing Image Names & Alts through Hash  -->
 <% @image_hash.each do |key,value| %>
-	<p><%= image_tag value, alt: key %></p>
+	<p><%= image_tag value, alt: key, class: "img-responsive" %></p>
 <% end %>
 
 
