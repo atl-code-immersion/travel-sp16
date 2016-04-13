@@ -1,28 +1,9 @@
-== README
+Travel App!
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+We worked on this app for the bulk of our first week of Rails (third week of class).
 
-Things you may want to cover:
+We looked at passing data as instance variables from the controller to the views, through query strings, and use CRUD (Create, Read, Update, Destroy) with database tables.
 
-* Ruby version
+On the front end, we got used to using Bootstrap for our layouts.
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Finally, we added the Google Maps API to our app.
