@@ -15,5 +15,9 @@
   <%= @destination.description %>
 </p>
 
+<p>
+  <%= image_tag @destination.avatar.url, alt: "City Pic" %>
+</p>
+
 <%= link_to 'Edit', edit_destination_path(@destination) %> |
 <%= link_to 'Back', destinations_path %>

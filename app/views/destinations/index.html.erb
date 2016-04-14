@@ -15,6 +15,11 @@
     <div class="col-md-4">
       <div class="well index-wells">
         <h2><%= "#{destination.city}, #{destination.country}" %></h2>
+        <% if destination.avatar.url == nil %>
+          <%= image_tag "city_silhouette.png", alt: "No image found for destination", width: "250" %>
+        <% else %>
+          <p><%= image_tag destination.avatar.url, alt: "#{destination.city}", width: "250" %></p>
+        <% end %>
         <p><strong>Pop:</strong> <%= number_with_delimiter destination.population %></p>
         <p><%= destination.description.html_safe %></p>
         <p>

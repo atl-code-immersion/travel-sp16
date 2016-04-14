@@ -23,6 +23,10 @@
   <div class="form-group">
     <%= f.text_area :description, placeholder: "Describe the destination...", class: "form-control", rows: "10" %>
   </div>
+  <div class="form-group">
+    <strong>Upload Image: </strong>
+    <%= f.file_field :avatar %>
+  </div>
   <div class="actions">
     <%= f.submit class: "btn btn-primary" %>
   </div>
