@@ -15,43 +15,83 @@
 //= require bootstrap-sprockets
 //= require_tree .
 
+// $(document).ready(function (){
+
+//   function initialize() {
+//   	var myLatlng = new google.maps.LatLng(33.784624, -84.422030);
+
+//     var mapOptions = {
+// 	    center: myLatlng,
+// 	    zoom: 15,
+// 	    scrollwheel: false
+//     };
+      
+//     var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);  
+
+//     var image = "<%= asset_path 'sbw-icon.jpg' %>";
+
+//     var contentString = '<h2>Strongbox West</h2>' +
+//    '<p>Where all your dreams come true.</p>';
+
+//    	var infowindow = new google.maps.InfoWindow({
+//    		content: contentString
+//  		});
+
+//     var marker = new google.maps.Marker({
+// 		  position: myLatlng,
+// 		  map: map,
+// 		  title: 'Strongbox West',
+// 		  icon: image,
+// 		  animation: google.maps.Animation.BOUNCE
+// 		});
+
+// 		google.maps.event.addListener(marker, 'click', function() {
+//     	infowindow.open(map,marker);
+//  		});
+//   }
+    
+//   google.maps.event.addDomListener(window, 'load', initialize);
+// });
+
 $(document).ready(function (){
 
   function initialize() {
-  	var myLatlng = new google.maps.LatLng(33.784624, -84.422030);
+    var myLatlng = new google.maps.LatLng(33.771270, -84.390240);
 
     var mapOptions = {
-	    center: myLatlng,
-	    zoom: 15,
-	    scrollwheel: false
+      center: myLatlng,
+      zoom: 12,
+      scrollwheel: false
     };
       
     var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);  
 
-    var image = "<%= asset_path 'sbw-icon.jpg' %>";
+    // var image = "<%= asset_path 'sbw-icon.jpg' %>";
 
-    var contentString = '<h2>Strongbox West</h2>' +
-   '<p>Where all your dreams come true.</p>';
+    var sites = [
+      ['Strongbox West', 33.784958, -84.421575, 4],
+      ['Home', 33.726922, -84.354228, 5],
+      ['Atlanta Tech Village', 33.848493, -84.373483, 3],
+      ['ATDC', 33.777083, -84.389547, 2],
+      ['Ponce City Market', 33.773153, -84.366050, 1]
+    ];
 
-   	var infowindow = new google.maps.InfoWindow({
-   		content: contentString
- 		});
+    var marker, i;
 
-    var marker = new google.maps.Marker({
-		  position: myLatlng,
-		  map: map,
-		  title: 'Strongbox West',
-		  icon: image,
-		  animation: google.maps.Animation.BOUNCE
-		});
+    for (i = 0; i < sites.length; i++) { 
 
-		google.maps.event.addListener(marker, 'click', function() {
-    	infowindow.open(map,marker);
- 		});
+      marker = new google.maps.Marker({
+        position: new google.maps.LatLng(sites[i][1], sites[i][2]),
+        map: map
+      });
+    }
+
+
+    google.maps.event.addListener(marker, 'click', function() {
+      infowindow.open(map,marker);
+    });
   }
     
   google.maps.event.addDomListener(window, 'load', initialize);
 });
-
-
 
